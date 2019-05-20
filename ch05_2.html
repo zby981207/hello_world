@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function drawLine() {
+            var canvas = document.getElementById("myCanvas");
+            var context = canvas.getContext("2d");
+            var linear = context.createLinerGradient(0,0,200,160);
+            linear.addColorStop(0,"#f00");
+            linear.addColorStop(0.3,"yellow");
+            linear.addColorStop(0.6,"purple");
+            linear.addColorStop(1,"green");
+            context.fillStyle = linear;
+            context.fillRect(10,10,200,160);
+
+            var linearText = context.createLinerGradient(0,0,150,50);
+            var linear = context.createLinerGradient(0,0,200,160);
+            linearText.addColorStop(0,"#f00");
+            linearText.addColorStop(0.3,"yellow");
+            linearText.addColorStop(0.6,"purple");
+            linearText.addColorStop(1,"green");
+            context.fillStyle = linearText;
+            context.font = "30px bold";
+            context.fillText("html线性渐变字",10,180);
+        }
+    </script>
+</head>
+<body>
+    <canvas id="myCanvas" width="300" height="100"></canvas><br />
+    <button onclick="drawLine()">绘图</button>
+</body>
+</html>

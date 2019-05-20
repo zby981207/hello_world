@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <script>
+        function draw() {
+            var canvas = document.getElementById("myCanvas");
+            var context = canvas.getContext("2d");
+            fillColorRadial = context.createRadialGradient(150,150,10,150,150,200);
+            fillColorRadial = addColorStop(0,"red");
+            fillColorRadial = addColorStop(0.2,"yellow");
+            fillColorRadial = addColorStop(0.4,"black");
+            context.fillStyle = fillColorRadial;
+            context.rect(0,0,300,300);
+            context.fill();
+        }
+    </script>
+    <fieldset>
+        <legend>径向渐变</legend>
+        <canvas id="myCanvas" width="300px" height="300px"></canvas>
+        <br />
+        <button onclick="draw()">绘图</button>
+    </fieldset>
+</html>
